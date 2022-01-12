@@ -11,8 +11,8 @@ In C language, array has a fixed size meaning once the size is given to it it ca
 
 ### Example code
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
     int main()
     {
