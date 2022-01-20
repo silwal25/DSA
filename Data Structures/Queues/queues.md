@@ -88,5 +88,7 @@ In a normal Queue, we can insert elements until queue becomes full. But once que
 #### Finding the next and previous position
 
 current position = i
+
 next position = (i+1) % n
+
 previous position = (i+n-1) % n

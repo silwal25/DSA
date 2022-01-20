@@ -1,6 +1,51 @@
-#include "../includes/LinkedList.hpp"
-#include "../includes/Node.hpp"
+/**
+ * @file main.cpp
+ * @author Lalit Silwal
+ * @brief Linked list implementation
+ * @version 0.1
+ * @date 2022-01-20
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <iostream>
+
+// Class to create a linked list node
+class Node
+{
+public:
+  int data;
+  Node *next;
+};
+
+// Linked list class
+class LinkedList
+{
+private:
+  Node *head;
+  Node *tail;
+  int length;
+
+public:
+  // Constructor for linked list initialization
+  LinkedList(int data);
+
+  // Functions for linked list manipulation
+  void print();
+  int size() { return length; } // To find the size of the linked list
+  void countNodes();
+
+  // Insertion
+  void append(int data);
+  void prepend(int data);
+  void insertAt(int data, int position);
+
+  // Deletion
+  void deleteFirst();
+  void deleteLast();
+  void deleteAt(int position);
+};
 
 // Constructor to initialize linked list
 LinkedList::LinkedList(int data)
@@ -130,4 +175,21 @@ void LinkedList::deleteAt(int position)
     currentPtr->next = temp;
     length--;
   }
+}
+
+// Driver function
+int main(int argc, char const *argv[])
+{
+  LinkedList *l1 = new LinkedList(10);
+  l1->prepend(20);
+  l1->append(30);
+  l1->append(40);
+  l1->append(50);
+  l1->print();
+  std::cout << "After deleting \n";
+  l1->deleteAt(30);
+  l1->print();
+  std::cout
+      << "The length of the linked list is: " << l1->size() << std::endl;
+  return 0;
 }
